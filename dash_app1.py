@@ -602,6 +602,7 @@ def layout_evolucion(df_jul, df_ago, df_sep, df_oct, sj, sa, ss, so):
 # 5. APP PRINCIPAL
 # ==========================================
 app = dash.Dash(__name__, title="IMSS Plataformas - Final v5", suppress_callback_exceptions=True)
+server = app.server
 
 glosario = html.Details([
     html.Summary("Glosario de Términos y Notas Metodológicas (Clic para desplegar)", style={"cursor":"pointer", "color":GUINDA, "fontWeight":"bold", "fontSize":"16px", "padding":"10px", "backgroundColor":"#eee", "borderRadius":"5px"}),
@@ -783,3 +784,4 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
 
     app.run(host="0.0.0.0", port=port)
+
