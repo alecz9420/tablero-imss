@@ -366,7 +366,7 @@ def bloque_sectores(df_sbc, titulo, mes):
                 html.Div(circs, style={"display":"flex", "justifyContent":"center"})
             ], style={**CARD_STYLE, "flex":1, "marginRight":"15px"}),
              html.Div([
-                html.H4("Pirámide Salarial por Edad", style={"textAlign":"center", "fontSize":"14px", "color":GUINDA}),
+                html.H4("SBC promedio por edad, según sexo", style={"textAlign":"center", "fontSize":"14px", "color":GUINDA}),
                 dcc.Graph(figure=fig_pir, style={"height":"300px"}, id={'type': 'copy-graph', 'index': f"pir-{titulo}-{mes}"})
             ], style={**CARD_STYLE, "flex":2})
         ], style={"display":"flex"})
@@ -601,7 +601,7 @@ def layout_evolucion(df_jul, df_ago, df_sep, df_oct, sj, sa, ss, so):
 # ==========================================
 # 5. APP PRINCIPAL
 # ==========================================
-app = dash.Dash(__name__, title="IMSS Plataformas - Final v5", suppress_callback_exceptions=True)
+app = dash.Dash(__name__, title="Tablero PD", suppress_callback_exceptions=True)
 server = app.server
 
 glosario = html.Details([
@@ -784,5 +784,6 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
 
     app.run(host="0.0.0.0", port=port)
+
 
 
